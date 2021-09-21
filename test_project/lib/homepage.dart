@@ -4,22 +4,18 @@ import 'package:flutter/painting.dart';
 
 // ignore_for_file: deprecated_member_use
 
-
 class Homepage extends StatefulWidget {
   @override
   _HomepageState createState() => _HomepageState();
 }
 
 class _HomepageState extends State<Homepage> {
-
-  int c = 0;
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.grey[900],
-
       appBar: AppBar(
         backgroundColor: Color(0xFF121212),
         leading: IconButton(
@@ -37,14 +33,11 @@ class _HomepageState extends State<Homepage> {
         ),
         centerTitle: true,
       ),
-
       body: Column(
         children: [
-
           SizedBox(
             height: 40,
           ),
-
           Center(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
@@ -63,18 +56,16 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
           ),
-
           SizedBox(
             height: 50,
           ),
-
           Center(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 80, vertical: 40),
               child: Column(
                 children: [
                   Text(
-                    'Level : ${c}',
+                    'Current Level : ${_count}',
                     style: TextStyle(
                       color: Color(0xFF03DAC6),
                       fontSize: 30,
@@ -82,15 +73,13 @@ class _HomepageState extends State<Homepage> {
                       letterSpacing: 3,
                     ),
                   ),
-
                   SizedBox(
                     height: 20,
                   ),
-
                   FlatButton.icon(
                     onPressed: () {
                       setState(() {
-                        c -= 1;
+                        _count -= 1;
                       });
                     },
                     icon: Icon(
@@ -114,11 +103,10 @@ class _HomepageState extends State<Homepage> {
           ),
         ],
       ),
-
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            c += 1;
+            _count += 1;
           });
         },
         backgroundColor: Colors.indigo,
